@@ -1,8 +1,7 @@
 {
   "name": "turbo-ci-cd",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "turbo run dev",
     "dev:promotion": "turbo run dev --filter=@turbo-ci-cd/promotion",
@@ -17,9 +16,6 @@
     "test-e2e:promotion": "turbo run test-e2e --filter=@turbo-ci-cd/promotion",
     "test-e2e:analytics": "turbo run test-e2e --filter=@turbo-ci-cd/analytics"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "turbo": "^2.9.14"
   },
