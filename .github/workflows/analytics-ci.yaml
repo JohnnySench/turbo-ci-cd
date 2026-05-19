@@ -1,0 +1,57 @@
+name: Analytics CI
+
+on:
+  pull_request:
+    paths:
+      - 'apps/analytics/**'
+      - 'packages/**'
+      - 'pnpm-lock.yaml'
+      - 'turbo.json'
+
+  push:
+    branches:
+      - main
+    paths:
+      - 'apps/analytics/**'
+      - 'packages/**'
+      - 'pnpm-lock.yaml'
+      - 'turbo.json'
+
+jobs:
+  analytics:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build analytics
+        run: |
+          pnpm turbo run build \
+            --filter=@turbo-ci-cd/analytics...
+
+      - name: Test analytics
+        run: |
+          pnpm turbo run test \
+            --filter=@turbo-ci-cd/analytics...
+
+      - name: Install Playwright
+        run: pnpm exec playwright install --with-deps
+
+      - name: E2E analytics
+        run: |
+          pnpm turbo run test-e2e \
+            --filter=@turbo-ci-cd/analytics...

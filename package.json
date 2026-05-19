@@ -1,0 +1,27 @@
+{
+  "name": "turbo-ci-cd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:promotion": "turbo run dev --filter=@turbo-ci-cd/promotion",
+    "dev:analytics": "turbo run dev --filter=@turbo-ci-cd/analytics",
+    "build": "turbo run build",
+    "build:promotion": "turbo run build --filter=@turbo-ci-cd/promotion",
+    "build:analytics": "turbo run build --filter=@turbo-ci-cd/analytics",
+    "test": "turbo run test",
+    "test:promotion": "turbo run test --filter=@turbo-ci-cd/promotion",
+    "test:analytics": "turbo run test --filter=@turbo-ci-cd/analytics",
+    "test-e2e": "turbo run test-e2e",
+    "test-e2e:promotion": "turbo run test-e2e --filter=@turbo-ci-cd/promotion",
+    "test-e2e:analytics": "turbo run test-e2e --filter=@turbo-ci-cd/analytics"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "turbo": "^2.9.14"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
