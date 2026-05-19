@@ -62,5 +62,5 @@ jobs:
 
       - name: E2E promotion
         run: |
-          pnpm turbo run test-e2e \
-            --filter=@turbo-ci-cd/promotion...
+          pnpm turbo run preview --filter=@turbo-ci-cd/promotion... &
+          pnpm turbo run test-e2e --filter=@turbo-ci-cd/promotion...

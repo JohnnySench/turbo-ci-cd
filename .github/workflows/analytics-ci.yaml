@@ -53,5 +53,5 @@ jobs:
 
       - name: E2E analytics
         run: |
-          pnpm turbo run test-e2e \
-            --filter=@turbo-ci-cd/analytics...
+          pnpm turbo run preview --filter=@turbo-ci-cd/analytics... &
+          pnpm turbo run test-e2e --filter=@turbo-ci-cd/analytics...
