@@ -8,15 +8,6 @@ on:
       - 'pnpm-lock.yaml'
       - 'turbo.json'
 
-  push:
-    branches:
-      - main
-    paths:
-      - 'apps/promotion/**'
-      - 'packages/**'
-      - 'pnpm-lock.yaml'
-      - 'turbo.json'
-
 jobs:
   promotion:
     runs-on: ubuntu-latest

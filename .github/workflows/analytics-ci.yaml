@@ -8,15 +8,6 @@ on:
       - 'pnpm-lock.yaml'
       - 'turbo.json'
 
-  push:
-    branches:
-      - main
-    paths:
-      - 'apps/analytics/**'
-      - 'packages/**'
-      - 'pnpm-lock.yaml'
-      - 'turbo.json'
-
 jobs:
   analytics:
     runs-on: ubuntu-latest
