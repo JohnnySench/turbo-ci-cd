@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import HelloAnalytics from './components/HelloAnalytics.vue'
 </script>
 
 <template>
   <a href="/">Web</a>
-  <HelloWorld />
+  <HelloAnalytics />
 </template>
